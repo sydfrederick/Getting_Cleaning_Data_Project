@@ -22,11 +22,11 @@ in the GitHub repository.
 ## run_analysis.R
 
 run_analysis.R does the following:
--1) Merges the training and the test sets to create one data set, named data.
--2) Extracts only the measurements on the mean and standard deviation for each measurement. 
--3) Uses descriptive activity names to name the activities in the data set
--4) Appropriately labels the data set with descriptive variable names. 
--5) From the data set in step 4, creates a second, independent tidy data set named tidyData with the average of each variable for each activity and each subject.
+- 1) Merges the training and the test sets to create one data set, named data.
+- 2) Extracts only the measurements on the mean and standard deviation for each measurement. 
+- 3) Uses descriptive activity names to name the activities in the data set
+- 4) Appropriately labels the data set with descriptive variable names. 
+- 5) From the data set in step 4, creates a second, independent tidy data set named tidyData with the average of each variable for each activity and each subject.
 
 run_analysis.R does not use the traditional merge function, but instead uses cbinds and rbinds to 
 merge the data finles together. This required keeping excellent tabs on the positioning
