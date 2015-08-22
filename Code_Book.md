@@ -1,12 +1,12 @@
-#    Data Code Book
+# Data Code Book
 ## Original description of the data
-    The features selected for this dataset come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+ The features selected for this dataset come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-    The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+ The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-    The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
-    
-	For each record it is provided:
+ The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+ 
+ For each record it is provided:
 
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope. 
@@ -16,30 +16,30 @@
 
 ## The "tidy" data set
 
-    For this project, I had to merge the 30% test data sets with the remaining 70% train data sets to complete the data set. I only took the data from measurements that had to do with a mean or standard deviation. I also converted variable names to be more readable. Also, the mean was applied to each subject and activity to condense the data. 
+ For this project, I had to merge the 30% test data sets with the remaining 70% train data sets to complete the data set. I only took the data from measurements that had to do with a mean or standard deviation. I also converted variable names to be more readable. Also, the mean was applied to each subject and activity to condense the data. 
 
 
 ## Conversions of variable names
 
-    To make things more readable, I converted original variable names to exclude nasty syntax like "()" and prefixes like "t" and "f". I decided to change "t" to "Time" to indicate the signal was a frequency domain signal. I also decided to change the "f" prefix to "Frequency" to indicate the signal was a frequency domain signal. Although some of the original data was subject to a Fast Fourier Transform, all of that data was stripped out in run_analysis.R. 
+ To make things more readable, I converted original variable names to exclude nasty syntax like "()" and prefixes like "t" and "f". I decided to change "t" to "Time" to indicate the signal was a frequency domain signal. I also decided to change the "f" prefix to "Frequency" to indicate the signal was a frequency domain signal. Although some of the original data was subject to a Fast Fourier Transform, all of that data was stripped out in run_analysis.R. 
 
-    I also decided to extend the names of the following: 
+ I also decided to extend the names of the following: 
 - "Acc" to "Acceleration", to indicate that the signal was a linear acceleration derived from the accelerometer.
 - "Mag" to "Magnitude", to indicate that the Euclidean norm was used in calculation of this signal.
 
 
 ## Variables and descriptions
 
-    In addition to the above information, the name "Gyro" used in some variable names refers to the measurement being derived from the gyroscope.    
-    The suffixes "-X", "-Y", and "-Z" are used to denote the 3-axial signals in the X, Y, and Z directions, respectively.
-	"Subject_ID" is a numerical label in the range [1,30] that corresponds to the subject of the measurements
-    "Activity_Label": A character string indicating what activity the subject was doing when the measurements were taken, such as "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING",  or "LAYING". This was added in because the original activity labels were numerical labels in the range [1:6].
+ In addition to the above information, the name "Gyro" used in some variable names refers to the measurement being derived from the gyroscope.    
+ The suffixes "-X", "-Y", and "-Z" are used to denote the 3-axial signals in the X, Y, and Z directions, respectively.
+ "Subject_ID" is a numerical label in the range [1,30] that corresponds to the subject of the measurements
+ "Activity_Label": A character string indicating what activity the subject was doing when the measurements were taken, such as "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING",  or "LAYING". This was added in because the original activity labels were numerical labels in the range [1:6].
 	
-	Variables containing the name "mean" are estimated from the mean value of the original measurement. Values containing the name "std" are values estimated from the standard deviation of the original signal. Variables containing the name "meanFreq" were estimated using the weighted average of the frequency components to obtain a mean frequency.
+ Variables containing the name "mean" are estimated from the mean value of the original measurement. Values containing the name "std" are values estimated from the standard deviation of the original signal. Variables containing the name "meanFreq" were estimated using the weighted average of the frequency components to obtain a mean frequency.
 
 ## List of variables
 
-####    Note: Each measurement is normalized and bounded within the [-1,1] range. 
+#### Note: Each measurement is normalized and bounded within the [-1,1] range. 
 - "Subject_ID"
 - "Activity_Label"
 - "TimeBodyAcceleration-mean-X"
