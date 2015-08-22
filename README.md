@@ -29,7 +29,7 @@ run_analysis.R does the following:
 - 5) From the data set in step 4, creates a second, independent tidy data set named tidyData with the average of each variable for each activity and each subject.
 
 run_analysis.R does not use the traditional merge function, but instead uses cbinds and rbinds to 
-merge the data finles together. This required keeping excellent tabs on the positioning
+merge the data files together. This required keeping excellent tabs on the positioning
 of the data. The other "benefit" of this method is that it does not reorder the data.
 Reordering is done at the very end with the melt and dcast functions.
 
