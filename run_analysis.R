@@ -88,4 +88,4 @@ dataMelt <- melt(data, id=c("Subject_ID", "Activity_Label"), measure.vars = meas
 tidyData <- dcast(dataMelt, Subject_ID + Activity_Label ~ variable, mean)
 
 ## Now that we have the tidy data, we will now write the output
-write.table(tidyData, file = "output2.csv", row.names = FALSE)
+write.table(tidyData, file = "output2.txt", row.names = FALSE)
